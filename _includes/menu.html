@@ -1,7 +1,7 @@
 <ul class="nav nav-list">
     <li><a href="/">Tom's Place</a></li>
     <li class="nav-header">Projects</li>
-    {% for posts in site.posts %}
+    {% for post in site.posts %}
         {% if post.title == page.title %}
             <li><a class="active" href="{{ post.url }}">{{ post.title }}</a></li>
         {% else %}
