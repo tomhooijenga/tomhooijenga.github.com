@@ -7,5 +7,14 @@ css: ["nice"]
 {% assign scripts ['nice'] %}
 
 {{ page.title }}
-{{ page.css }}
-{{ css }}
+
+// page.css
+{% for item in page.css %} 
+    {{ item }}
+    <br />
+{% endfor %}
+// css
+{% for item in css %} 
+    {{ item }}
+    <br />
+{% endfor %} 
