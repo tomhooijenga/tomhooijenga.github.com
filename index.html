@@ -2,9 +2,44 @@
 layout: default
 title: Tom Hooijenga
 ---
-<h2>archive</h2>
-<ul id="archive">
-{% for post in site.posts %}
-<li><a href="{{ post.url }}">{{ post.title }}</a></li>
-{% endfor %}
-</ul>
+<body class="dark">
+    <div class="container">
+        <h1>Tom Hooijenga</h1>
+        <span id="switch" title="Switch to light"><i class="icon-toggle"></i></span>
+        <p class="info"><a href="#">Website</a><a href="#">Email</a></p>
+    </div>
+    <script>
+        (function () {
+            "use strict";
+            var themeSwitch = function (theme, change) {
+                var body = document.querySelector("body"),
+                    now = new Date(),
+                    expire = new Date(now.getFullYear(), now.getMonth() + 1, 1);
+
+                if (theme === "dark") {
+                    body.classList.remove("dark");
+                    body.classList.add("light");
+                    toggle.title = "Switch to dark";
+                } else if (theme === "light") {
+                    body.classList.remove("light");
+                    body.classList.add("dark");
+                    toggle.title = "Switch to light"
+                }
+
+                document.cookie = "theme=" + theme + "; expire=" + expire + "; path=/";
+            };
+
+            var toggle = document.querySelector("#switch");
+
+            window.addEventListener("load", function () {
+                var parts = document.cookie.split("theme="),
+                    theme = parts.pop().split(";").shift();
+                themeSwitch(theme);
+            })
+            toggle.addEventListener("click", function () {
+                var theme = document.querySelector("body").classList.contains("dark") ? "dark" : "light";
+                themeSwitch(theme, true);
+            });
+        })();
+    </script>
+</body>
