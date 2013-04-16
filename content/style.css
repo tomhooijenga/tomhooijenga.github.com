@@ -51,12 +51,6 @@ a {
     text-decoration: none;
     padding: 0 20px;
 }
-a:first-child {
-    border-left: none;
-    -webkit-box-shadow:  none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
 a:hover{
    text-decoration: underline; 
 }
@@ -107,7 +101,7 @@ body.light {
     background: #ececec;
 }
 .light h1 {
-    color: #222222;
+    color: #2f2f2f;
     -webkit-box-shadow: white 0 1px 0;
     -moz-box-shadow: white 0 1px 0;
     box-shadow: white 0 1px 0;
