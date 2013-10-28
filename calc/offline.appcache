@@ -1,0 +1,11 @@
+CACHE MANIFEST
+
+CACHE:
+# General style
+style.css
+
+# Calculator
+calc-v2.js
+
+NETWORK:
+*
