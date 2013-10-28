@@ -6,6 +6,8 @@ html {
 body {
     margin:  0;
     width:  100%;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
 }
 .container {
     width: 90%;
@@ -20,6 +22,8 @@ h1 {
     letter-spacing: -1px;
     padding-bottom: 20px;
     text-align: center;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
 }
 h1 a {
     color: inherit;
