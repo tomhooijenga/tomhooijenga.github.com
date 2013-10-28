@@ -1,5 +1,5 @@
 html {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     width: 100%;
     height: 100%;
 }
@@ -53,10 +53,13 @@ a {
 a:hover{
    text-decoration: underline; 
 }
-
+.info {
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+}
+/* DARK */
 body.dark {
     background: #2f2f2f;
-
 }
 .dark h1 {
     color: #c6c6c6;
@@ -96,6 +99,7 @@ body.dark {
     -moz-box-shadow: none;
     box-shadow: none;
 }
+/* LIGHT */
 body.light {
     background: #ececec;
 }
