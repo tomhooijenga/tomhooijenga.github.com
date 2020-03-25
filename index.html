@@ -21,9 +21,11 @@
 <script>
     (function () {
         "use strict";
-        var themeSwitch = function (theme) {
-            var body = document.querySelector("body"),
-                now = new Date(),
+        var body = document.body,
+            toggle = document.getElementById("switch");
+
+        function setTheme(theme) {
+            var now = new Date(),
                 expire = new Date(now.getFullYear(), now.getMonth() + 1, 1);
 
             if (theme === "dark") {
@@ -37,20 +39,17 @@
             }
 
             document.cookie = "theme=" + theme + "; expire=" + expire + "; path=/";
-        };
+        }
 
-        var toggle = document.querySelector("#switch");
+        var parts = document.cookie.split("theme="),
+            theme = parts.pop().split(";").shift();
 
-        window.addEventListener("load", function () {
-            var parts = document.cookie.split("theme="),
-                theme = parts.pop().split(";").shift();
-
-            themeSwitch(theme);
-        }, false);
+        setTheme(theme || 'dark');
 
         toggle.addEventListener("click", function () {
-            var theme = document.querySelector("body").classList.contains("dark") ? "dark" : "light";
-            themeSwitch(theme, true);
+            var theme = body.classList.contains("dark") ? "dark" : "light";
+
+            setTheme(theme);
         });
     })();
 </script>
